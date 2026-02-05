@@ -1,4 +1,4 @@
-## Phase 1 — Python & Data Foundations
+# Phase 1 — Python & Data Foundations
 
 ### Objective
 - Build calm, confident Python and data skills that lead to paid work.
