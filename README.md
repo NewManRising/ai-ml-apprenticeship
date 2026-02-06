@@ -6,7 +6,7 @@
 
 ### Outcome
 By Day 14 I should be able to:
-- Write Python without panic
+- Write Python adequately
 - Load and clean data
 - Explain what my code does
 
