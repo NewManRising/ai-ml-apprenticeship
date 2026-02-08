@@ -6,7 +6,7 @@
 
 ### Outcome
 By Day 14 I should be able to:
-- Write Python adequately
+- Write Python comfortably
 - Load and clean data
 - Explain what my code does
 
