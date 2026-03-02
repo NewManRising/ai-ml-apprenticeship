@@ -1,0 +1,13 @@
+,name,age,salary,department,high_earner
+0,Alice,28,55000,Sales,False
+1,Bob,35,72000,Engineering,True
+2,Charlie,40,48000,Marketing,False
+3,Dana,30,61000,Sales,True
+4,Evan,45,80000,Engineering,True
+5,Fiona,25,45000,Marketing,False
+6,George,32,67000,Sales,True
+7,Hannah,38,59000,Engineering,False
+8,Ian,29,52000,Marketing,False
+9,Julia,41,75000,Sales,True
+10,Kyle,27,47000,Engineering,False
+11,Laura,33,64000,Marketing,True

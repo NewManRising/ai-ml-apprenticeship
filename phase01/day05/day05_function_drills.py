@@ -18,7 +18,7 @@ def calc_avg(x):
 digits = [2, 4, 1, 2, 5]
 print(calc_avg(digits))
 
-# Stripping Trailing And Leading Whitespace From a Strong and Converting To Lowercase
+# Stripping Trailing And Leading Whitespace From a String and Converting To Lowercase
 def clean_string(word):
     word = word.lower()
     word = word.strip()
@@ -29,7 +29,7 @@ print(clean_string("    HAPPY BIRTHDAY  "))
 # Dictionary Of Word Counts
 
 input_str = "Python is really cool"
-input_str2 = "I am what I am and that is  all that I am"
+input_str2 = "I am what I am and that is all that I am"
 
 def count_words(text):
     words = text.lower().split()
