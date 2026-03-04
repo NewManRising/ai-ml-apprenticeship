@@ -1,0 +1,17 @@
+name,age,salary,department,start_date
+John,27,46000,Marketing,02-27-2025
+Jill,33,unk,Sales,02-02-2022
+Bob,,88000,Engineering,11-12-1999
+Mohammed,41,75000,SALES,10-12-2001
+Anna,26,50000,sales,12-17-2020
+Monique,31,60000,Marketing,
+Joe,37,67000,Engineering,03-03-2023
+Jenny,,55000,Sales,01-22-2021
+Frank,54,90000,Sales,03-23-1997
+Aravind,33,,Marketing,05-17-2023
+Gilbert,27,49000,Marketing,06-09-2023
+Nandita,40,,Engineering,07-05-2024
+Jerry,42,72000,Marketing,11-11-2013
+Bill,21,35000,sales,02-12-2026
+Jose,30,65000,Engineering,09-25-2021
+

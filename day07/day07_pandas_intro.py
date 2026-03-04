@@ -3,7 +3,7 @@ import pandas as pd
 #--------------------------------------------------------------------------
 
 # Loading data
-data = pd.read_csv("day06_data.csv")
+data = pd.read_csv("day07_data.csv")
 
 # Making a copy
 df = data.copy()
@@ -50,5 +50,5 @@ num_high_earners = df["high_earner"].sum()
 print("\n# of High Earners:\n\n", num_high_earners)
 
 # Saving new dataframe
-df.to_csv("day06_modified.csv", index=False)
+df.to_csv("day07_modified.csv", index=False)
 print(df)

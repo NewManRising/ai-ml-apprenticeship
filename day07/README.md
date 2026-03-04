@@ -1,9 +1,9 @@
 This README is documenting and reinforcing concepts learned. 
 
 1) What is a DataFrame?
-A dataframe is a data structure in Pandas. It takes files like csv and xlsl and presents the data in a table containing rows and columns. It is a two-dimensional data structure that allows data manipulation, filtering, aggregation, and transformation in memory.
+A dataframe is a data structure in Pandas. It takes files like csv and xlsx and presents the data in a table containing rows and columns. It is a two-dimensional data structure that allows data manipulation, filtering, aggregation, and transformation in memory.
 
-2) What does df.shape tell you?
+2) What does df. shape tell you?
 df.shape gives you the shape of the dataframe. Ex: (3000, 10). This tells you how many rows and columns exist in the dataset (row, column).
 
 3) What is boolean filtering used for?
@@ -18,5 +18,5 @@ It helps preserve the original data because you now have two copies. The modifie
 “Day 6 — Pandas Practice”
 Include:
 
-I created a csv file to practice basic tasks with Pandas. I loaded the dataset into a a dataframe, inspected it, and printed values of selected columns. I then filtered rows using boolean filtering and created a new column. Finally I printed these values and saved the modified csv. These skills are essential and foundational to data science and preparing data for machine learning. 
+I created a csv file to practice basic tasks with Pandas. I loaded the dataset into a dataframe, inspected it, and printed values of selected columns. I then filtered rows using boolean filtering and created a new column. Finally, I printed these values and saved the modified csv. These skills are essential and foundational to data science and preparing data for machine learning. 
 
