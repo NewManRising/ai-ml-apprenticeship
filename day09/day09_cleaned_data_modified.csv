@@ -1,0 +1,16 @@
+name,age,salary,department,start_date,high_earner
+John,27.0,46000.0,Marketing,2025-02-27,False
+Jill,33.0,62500.0,Sales,2022-02-02,True
+Bob,33.0,88000.0,Engineering,1999-11-12,True
+Mohammed,41.0,75000.0,Sales,2001-10-12,True
+Anna,26.0,50000.0,Sales,2020-12-17,False
+Monique,31.0,60000.0,Marketing,2021-03-21,False
+Joe,37.0,67000.0,Engineering,2023-03-03,True
+Jenny,33.0,55000.0,Sales,2021-01-22,False
+Frank,54.0,90000.0,Sales,1997-03-23,True
+Aravind,33.0,62500.0,Marketing,2023-05-17,True
+Gilbert,27.0,49000.0,Marketing,2023-06-09,False
+Nandita,40.0,62500.0,Engineering,2024-07-05,True
+Jerry,42.0,72000.0,Marketing,2013-11-11,True
+Bill,21.0,35000.0,Sales,2026-02-12,False
+Jose,30.0,65000.0,Engineering,2021-09-25,True
