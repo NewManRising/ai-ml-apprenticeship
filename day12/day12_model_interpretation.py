@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 #---------------------------------------------------------------------------------------------------------------------
 # Loading Data
-data = pd.read_csv("day11_cleaned_data.csv")
+data = pd.read_csv("day12_cleaned_data.csv")
 df = data.copy()
 print(df.shape)
 print(df.dtypes)
@@ -58,3 +58,32 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+#---------------------------------------------------------------------------------------------------------------------
+# Coefficients For Features Used In Model Training
+coefficients = model.coef_[0]
+
+print(coefficients)
+
+# DataFrame Of Features Corresponding To Their Coefficients
+features_df = pd.DataFrame(
+        zip(X_train.columns, coefficients),
+        columns=["feature", "coefficient"]
+
+    )
+
+# Sorting Highest to Lowest Predictive Features
+features_df = features_df.sort_values(by="coefficient", ascending=False)
+print(features_df)
+
+
+print("\n** MODEL INSIGHTS **\n")
+
+print("Top Positive Predictor:")
+print(features_df.iloc[0]["feature"])
+
+print("\nModerate Predictor:")
+print(features_df.iloc[2]["feature"])
+
+print("\nNegative Predictor:")
+print(features_df.iloc[-1]["feature"])
