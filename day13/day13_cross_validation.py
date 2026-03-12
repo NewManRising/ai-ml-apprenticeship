@@ -13,6 +13,15 @@ print(df.head(3))
 
 
 #---------------------------------------------------------------------------------------------------------------------
+# Creating New Date Columns
+df["start_date"] = pd.to_datetime(df["start_date"])
+df["start_year"] = df["start_date"].dt.year
+df["start_month"] = df["start_date"].dt.month
+
+
+# Defining Features and Target Variables
+df["high_earner"] = df["salary"] > 60000
+#----------------------------------------------------------------------------------------------------------------------
 
 # Separating Features
 X = df.drop(columns=["salary", "high_earner", "name", "start_date"])
@@ -53,6 +62,34 @@ print(f"Accuracy: {accuracy:.2f}")
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
 #---------------------------------------------------------------------------------------------------------------------
+# Coefficients For Features Used In Model Training
+coefficients = model.coef_[0]
+
+print(coefficients)
+
+# DataFrame Of Features Corresponding To Their Coefficients
+features_df = pd.DataFrame(
+        zip(X_train.columns, coefficients),
+        columns=["feature", "coefficient"]
+)
+
+# Sorting Highest to Lowest Predictive Features
+features_df = features_df.sort_values(by="coefficient", ascending=False)
+print(features_df)
+
+
+print("\n** MODEL INSIGHTS **\n")
+
+print("Top Positive Predictor:")
+print(features_df.iloc[0]["feature"])
+
+print("\nModerate Predictor:")
+print(features_df.iloc[2]["feature"])
+
+print("\nNegative Predictor:")
+print(features_df.iloc[-1]["feature"])
+
+#----------------------------------------------------------------------------------------------------------------------
 # Implementing Cross-Validation
 scores = cross_val_score(model, X, y, cv=5)
 recall = cross_val_score(model, X, y, cv=5, scoring="recall")
