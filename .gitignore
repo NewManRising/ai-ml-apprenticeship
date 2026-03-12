@@ -22,3 +22,5 @@ Thumbs.db
 
 # Large or temporary outputs if needed
 *.log
+
+.idea/
