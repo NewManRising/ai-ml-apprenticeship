@@ -1,0 +1,4 @@
+1) **What is the target variable?** The target variable is "risk". This indicates whether the borrower is a good or bad fit for a loan.
+2) **What cleaning was performed?** I cleaned columns and made everything lowercase, removed special characters, and removed whitespace. I dropped an unnecessary "unnamed" column. I also filled missing values in categorical columns with "unknown."
+3) **Were missing values present?** Yes, there were missing values in account-related columns, and they were filled with "unknown."
+4) **Why is this step important?** This step ensures that the dataset is consistent and ready for encoding and modeling.
