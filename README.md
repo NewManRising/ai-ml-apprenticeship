@@ -1,144 +1,103 @@
+# AI / Machine Learning Apprenticeship
 
-# AI / ML Apprenticeship
+This repository documents a structured, hands-on buildout of applied machine learning and AI systems.
 
-This repository documents my structured journey to becoming a professional AI / Machine Learning engineer. The goal of this project is to build deep practical skills in Python, data science, machine learning, and AI systems by working through progressively more complex phases and real-world projects.
-
-Instead of jumping directly into advanced models, this apprenticeship focuses on building strong foundations and understanding the entire ML workflow from raw data to deployable systems.
-
----
-
-# Learning Philosophy
-
-Most machine learning projects fail because the fundamentals are skipped. This repository follows a structured approach:
-
-1. Build strong Python and data skills
-2. Understand real data pipelines
-3. Train and evaluate machine learning models
-4. Work with real-world datasets
-5. Build full AI systems end-to-end
-
-Each phase builds on the previous one.
-
-
+The focus is simple: take raw data, turn it into usable features, build models, and ship working solutions. Everything here is organized into phases that mirror how real-world projects are developed — from data handling and modeling to deployment and iteration.
 
 ---
 
-# Phase 1 – Python and Data Foundations
+## What This Work Covers
 
-Phase 1 focused on building the core skills required for machine learning work.
+This repository is not a collection of isolated notebooks. It is a continuous body of work centered around:
 
-Skills practiced:
+* Data preparation and transformation
+* Feature engineering and encoding strategies
+* Supervised and unsupervised modeling
+* Model evaluation and iteration
+* Applied NLP and generative AI workflows
+* End-to-end project builds
 
-• Python fundamentals  
-• File processing  
-• Functions and modular programming  
-• Pandas data manipulation  
-• Data cleaning and preprocessing  
-• Exploratory data analysis  
-• Feature engineering  
-• Logistic regression  
-• Model evaluation  
-• Cross validation  
-• Building a full machine learning pipeline  
-
-This phase established the technical foundation needed for real-world ML work.
+Each phase builds on the previous one, with an emphasis on producing clean, reproducible, and usable outputs.
 
 ---
 
-# Phase 2 – Machine Learning Projects
+## Repository Structure
 
-Phase 2 focuses on applying machine learning to real datasets and solving real problems.
+```text
+ai-ml-apprenticeship/
+│
+├── phase01-python-data-foundations/
+├── phase02-machine-learning-projects/
+├── phase03-deep-learning/
+├── phase04-nlp-and-generative-ai/
+├── phase05-production-and-deployment/
+│
+└── README.md
+```
 
-Topics covered include:
-
-• Real-world dataset exploration  
-• Data preprocessing and feature engineering  
-• Decision trees and ensemble models  
-• Model comparison and evaluation  
-• ROC-AUC and classification metrics  
-• Feature importance and model interpretation  
-• Cross-validation and tuning  
-• Portfolio-quality ML projects  
-
-The first project in this phase focuses on **credit risk classification**, predicting whether a loan applicant represents a good or bad credit risk.
-
----
-
-# Projects
-
-The `projects` folder contains polished portfolio-ready implementations based on work completed during the apprenticeship.
-
-Planned projects include:
-
-• Credit risk classification  
-• Customer churn prediction  
-• Housing price prediction  
-• Fraud detection  
-• Retrieval-augmented AI systems  
-• AI agents and automation tools  
-
-These projects demonstrate the ability to move from raw data to working machine learning systems.
+* **Phase 01** — Core data handling, Python workflows, and dataset preparation
+* **Phase 02** — Classical machine learning projects and model pipelines
+* **Phase 03** — Neural networks and deep learning systems
+* **Phase 04** — NLP, transformers, and generative AI applications
+* **Phase 05** — Deployment, APIs, and production-level systems
 
 ---
 
-# Tools and Technologies
+## Approach
 
-This repository uses the following core tools:
+The approach here is execution-focused:
 
-Python  
-Pandas  
-NumPy  
-Scikit-learn  
-Matplotlib  
-Seaborn  
+* Build directly on real datasets
+* Keep pipelines simple and inspectable
+* Avoid unnecessary abstraction early
+* Prioritize clarity over cleverness
+* Iterate quickly and refine
 
-Future phases will introduce:
-
-PyTorch  
-LangChain  
-Vector databases  
-FastAPI  
-React / Next.js frontends  
+The goal is not theory for its own sake, but systems that work and can be extended.
 
 ---
 
-# Development Environment
+## Current Work
 
-Dependencies are tracked using:
+Active work is centered on:
 
-
-requirements.txt
-
-
-Install dependencies using:
-
-
-pip install -r requirements.txt
-
+* Structured tabular datasets (classification and prediction tasks)
+* Feature preparation and encoding workflows
+* Baseline modeling and evaluation
+* Expanding into NLP and LLM-based applications
 
 ---
 
-# Goals of This Apprenticeship
+## Why This Exists
 
-• Build deep practical machine learning skills  
-• Create portfolio-quality ML projects  
-• Learn to build AI systems end-to-end  
-• Become employable as a machine learning engineer  
-• Eventually build independent AI-powered products and services
+Most projects stop at “it runs.” This does not.
+
+The intent here is to:
+
+* Build systems that are understandable end-to-end
+* Maintain clean, readable code and structure
+* Create a body of work that can be extended into production tools
+* Treat each phase as part of a larger system, not a one-off exercise
 
 ---
 
-# Progress
+## Notes
 
-Phase 1 – Python & Data Foundations  
-Completed
+* Code is organized by phase and day for traceability
+* Outputs are reproducible and tied to specific datasets
+* Work is iterative — earlier phases may be revisited and improved
 
-Phase 2 – Machine Learning Projects  
-In progress
+---
 
-Phase 3 – Deep Learning  
-Planned
+## Ongoing Direction
 
-Phase 4 – AI Systems and Applications  
-Planned
+This repository will continue evolving toward:
 
+* End-to-end AI applications
+* API-driven tools and services
+* RAG systems and domain-specific assistants
+* Production-ready deployments
+
+---
+
+If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.
