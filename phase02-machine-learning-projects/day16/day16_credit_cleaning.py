@@ -61,4 +61,4 @@ df[["checking_account", "saving_accounts"]] = df[["checking_account", "saving_ac
 print("\nMissing Values:\n")
 print(df.isna().sum())
 
-df.to_csv("day16_cleaned_credit_data.csv")
+df.to_csv("day16_cleaned_credit_data.csv", index=False)
