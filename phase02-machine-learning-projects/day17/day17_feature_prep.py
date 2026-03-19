@@ -28,3 +28,7 @@ X = pd.get_dummies(X, drop_first=True)
 print("Encoded Shape of X:\n", X.shape)
 print("Encoded Columns Of X:\n", X.columns.tolist())
 print("Encoded First 5 Rows:\n", X.head(5))
+
+# Saving Data
+X.to_csv("X_encoded.csv", index=False)
+y.to_csv("y.csv", index=False)
