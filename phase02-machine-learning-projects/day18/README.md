@@ -16,4 +16,4 @@ Precision, recall, F1-score, and confusion matrix.
 
 5) **Key observations:**
 
-The model did not predict well for the "bad" class. The data was imbalanced (700 good, 300 bad). The model missed 37 bad loan predictions and predicted them as good. This is just a baseline and I will be attempting to improve these predictions.
+The model did not predict well for the "bad" class. The data was imbalanced (700 good, 300 bad). The model missed 39 bad loan predictions and predicted them as good. This is just a baseline and I will be attempting to improve these predictions.
