@@ -7,7 +7,7 @@ Yes, but barely. Training accuracy was 1.0 and the test accuracy was 0.775. This
 4) **How did it compare to logistic regression?**
 It is much better than logistic regression. Test accuracy is higher, and it did better with predictions according to the metrics.
 5) **Which model is strongest so far, and why?**
-It would be a tie between decision tree and random forest. Random forest is a little more stable and has excellent recall for the majority (class 0). But the decision tree does a slightly better job at recall for the minority class (class 1). The random firest predicts more True Positives but a little more False Positives. 
+It would be a tie between decision tree and random forest. Random forest is a little more stable and has excellent recall for the majority (class 0). But the decision tree does a slightly better job at recall for the minority class (class 1). The random forest predicts more True Positives but a little more False Positives. 
 
 
 The classification reports for all three models are below.
@@ -57,7 +57,7 @@ The classification reports for all three models are below.
 
 **Analysis Of All 3 Models** 
 
-Looking at all the confusion matrices and classifications reports
+Looking at all the confusion matrices and classification reports
 I would probably choose the decision tree. It has the least False Positives of the 3 models. Having fewer False Positives is much more meaningful with this type of classification problem.
 
 False Positives for all three models were:
@@ -70,4 +70,4 @@ Decision Tree = 28
 
 Random Forest = 36
 
-Random Forest predicted the most True Positives with 131, compared to 118 for decision tree and 125 for logistic regression.
+Random Forest predicted the most True Positives with 131, compared to 118 for decision tree and 125 for logistic regression. I trained all these models with no parameter adjustments or hyper tuning. I will apply this in the following days and compare again.  
