@@ -10,11 +10,11 @@ It is much better than logistic regression. Test accuracy is higher, and it did 
 It would be a tie between decision tree and random forest. Random forest is a little more stable and has excellent recall for the majority (class 0). But the decision tree does a slightly better job at recall for the minority class (class 1). The random forest predicts more True Positives but a little more False Positives. 
 
 
-The classification reports for all three models are below.
 
 
+<br>
 
-**Classification Report for Logistic Regression:**
+### Classification Report for Logistic Regression:
 
               precision    recall  f1-score   support
 
@@ -28,8 +28,9 @@ The classification reports for all three models are below.
 
 
 
+<br>
 
-**Classification Report for the Decision Tree:**
+### Classification Report for the Decision Tree:
 
              precision    recall  f1-score   support
 
@@ -40,8 +41,10 @@ The classification reports for all three models are below.
     macro avg      0.70      0.69      0.69       200
     weighted avg   0.74      0.75      0.75       200
 
+<br>
 
-**Classification Report for Random Forest:**
+### Classification Report for Random Forest:
+
 
                precision    recall  f1-score   support
 
@@ -55,19 +58,68 @@ The classification reports for all three models are below.
 
 
 
-**Analysis Of All 3 Models** 
+<br>
 
+### Confusion Matrix (Logistic Regression)
+
+|                 | Predicted 0 (good) | Predicted 1 (bad) |
+|-----------------|--------------------|-------------------|
+| Actual 0 (good) | 125                | 15                |
+| Actual 1 (bad)  | 39                 | 21                |
+
+
+
+
+
+
+### Confusion Matrix (Decision Tree)
+
+|                 | Predicted 0 (good) | Predicted 1 (bad) |
+|-----------------|--------------------|-------------------|
+| Actual 0 (good) | 118                | 22                |
+| Actual 1 (bad)  | 28                 | 32                |
+
+
+
+
+
+### Confusion Matrix (Random Forest)
+
+|                 | Predicted 0 (good) | Predicted 1 (bad) |
+|-----------------|--------------------|-------------------|
+| Actual 0 (good) | 131                | 9                 |
+| Actual 1 (bad)  | 36                 | 24                |
+
+
+
+
+
+
+
+
+
+
+
+
+### Model Comparison
+
+
+Built a Random Forest classifier to improve performance and stability over the decision tree model.
+
+The goal was to compare ensemble methods against single-model approaches.
 Looking at all the confusion matrices and classification reports
-I would probably choose the decision tree. It has the least False Positives of the 3 models. Having fewer False Positives is much more meaningful with this type of classification problem.
+I would probably choose the decision tree.
 
-False Positives for all three models were:
+It has the least False Positives of the 3 models. Having fewer False Positives is much more meaningful with this type of classification problem.
 
 
 
-Logistic Regression = 39 
+I trained all these models with no parameter adjustments or hyper tuning. I will apply this in the following days and compare again.  
 
-Decision Tree = 28
 
-Random Forest = 36
 
-Random Forest predicted the most True Positives with 131, compared to 118 for decision tree and 125 for logistic regression. I trained all these models with no parameter adjustments or hyper tuning. I will apply this in the following days and compare again.  
+- Logistic Regression: stable baseline, lower performance
+- Decision Tree: high variance, prone to overfitting
+- Random Forest: best balance of performance and stability so far
+
+

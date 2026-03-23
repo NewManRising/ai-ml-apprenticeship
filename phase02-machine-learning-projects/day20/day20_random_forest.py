@@ -43,8 +43,9 @@ forest.fit(X_train, y_train)
 y_pred_train = forest.predict(X_train)
 y_pred_test = forest.predict(X_test)
 
-print("\n** RANDON FOREST EVALUATION **")
+print("\n** RANDOM FOREST EVALUATION **")
 print("\nTraining Accuracy:", accuracy_score(y_train, y_pred_train))
 print("Test Accuracy:", accuracy_score(y_test, y_pred_test))
 print("\nClassification Report:\n\n", classification_report(y_test, y_pred_test, zero_division=0))
 print("Confusion Matrix:\n\n", confusion_matrix(y_test, y_pred_test))
+
