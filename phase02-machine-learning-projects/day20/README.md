@@ -114,7 +114,7 @@ It has the least False Positives of the 3 models. Having fewer False Positives i
 
 
 
-I trained all these models with no parameter adjustments or hyper tuning. I will apply this in the following days and compare again.  
+I trained all these models with no parameter adjustments or hyper tuning. The dataset is also imbalanced with a 700:300 split between majority:minority classes.  In the coming days I will apply several techniques to improve these models. 
 
 
 
