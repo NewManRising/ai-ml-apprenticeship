@@ -22,44 +22,59 @@ print("Shape of Labels:", y.shape)
 log_reg = LogisticRegression(max_iter=5000, random_state=42)
 tree = DecisionTreeClassifier(random_state=42)
 forest = RandomForestClassifier(random_state=42)
-
+#----------------------------------------------------------------------------------------------------------------------
 # Cross Validation Accuracy Scores
 log_score = cross_val_score(log_reg, X, y, cv=5, scoring="accuracy")
 tree_score = cross_val_score(tree, X, y, cv=5, scoring="accuracy")
 forest_score = cross_val_score(forest, X, y, cv=5, scoring="accuracy")
 
-# Average Accuracy Score
+
+# Cross Validation F1 Scores
+log_f1 = cross_val_score(log_reg, X, y, cv=5, scoring="f1")
+tree_f1 = cross_val_score(tree, X, y, cv=5, scoring="f1")
+forest_f1 = cross_val_score(forest, X, y, cv=5, scoring="f1")
+
+
+
+# Accuracy Means
 log_avg = log_score.mean()
 tree_avg = tree_score.mean()
 forest_avg = forest_score.mean()
 
-# Standard Deviations
+
+
+# Accuracy Standard Deviations
 log_std = log_score.std()
 tree_std = tree_score.std()
 forest_std = forest_score.std()
 
 
-# F1 Scores
-log_f1 = cross_val_score(log_reg, X, y, cv=5, scoring="f1")
-tree_f1 = cross_val_score(tree, X, y, cv=5, scoring="f1")
-forest_f1 = cross_val_score(forest, X, y, cv=5, scoring="f1")
 
-# Avg F1 Scores
+# F1 Means
 avg_log_f1 = log_f1.mean()
 avg_tree_f1 = tree_f1.mean()
 avg_forest_f1 = forest_f1.mean()
 
+# Scores
+print("\nLogReg Accuracy Scores:", log_score)
+print("Decision Tree Accuracy Scores:", tree_score)
+print("Random Forest Accuracy Scores:", forest_score)
+
+print("\nLogReg F1 Scores:", log_f1)
+print("Decision Tree F1 Scores:", tree_f1)
+print("Random Forest F1 Scores:", forest_f1)
 #---------------------------------------------------------------------------------------------------------------------
-# Results
+# Results Table
 
 results = {
     "Model": ["LogReg", "DTree", "RForest"],
-    "Avg_scores": [log_avg, tree_avg, forest_avg],
-    "Std_scores": [log_std, tree_std, forest_std],
-    "Avg_F1_scores": [avg_log_f1, avg_tree_f1, avg_forest_f1]
+    "CV Accuracy Mean": [log_avg, tree_avg, forest_avg],
+    "CV Accuracy Std": [log_std, tree_std, forest_std],
+    "CV F1 Mean": [avg_log_f1, avg_tree_f1, avg_forest_f1]
 }
 
+# Saving Results
 df = pd.DataFrame(results)
 df.to_csv("cv_results.csv", index=False)
-scores_report = df.to_string()
-print("\n** Report Of All Model Scores **\n\n", scores_report)
+cv_results = df.to_string()
+print("\n** Cross Validation Results **\n\n", cv_results)
