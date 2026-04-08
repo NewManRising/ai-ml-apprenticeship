@@ -1,8 +1,9 @@
 # Imports
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 #--------------------------------------------------------------------------------------------------------------------
@@ -34,7 +35,7 @@ params = {
 }
 
 # Setting Up GridSearchCV
-GS = GridSearchCV(estimator=forest, param_grid=params, scoring="f1", cv=5)
+GS = GridSearchCV(estimator=forest, param_grid=params, scoring="f1", cv=5, n_jobs=-1, verbose=1)
 
 # Running GridSearch CV on Training Data Only
 GS.fit(X_train, y_train)
@@ -49,11 +50,25 @@ print('Best Estimator:', GS.best_estimator_)
 #--------------------------------------------------------------------------------------------------------------------
 # Prediction and Evaluation
 y_pred = GS.best_estimator_.predict(X_test)
+y_prob = GS.best_estimator_.predict_proba(X_test)[:, 1]
+roc_auc = roc_auc_score(y_test, y_prob)
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
 
-cr = classification_report(y_test, y_pred)
-cm = confusion_matrix(y_test, y_pred)
-acc = accuracy_score(y_test, y_pred)
 print("** Final Results **\n")
-print('Accuracy:', acc)
-print('Classification Report:', cr)
-print('Confusion Matrix:', cm)
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nROC AUC Score:", roc_auc)
+
+# ROC_AUC Curve Plot
+plt.figure()
+
+plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
+plt.plot([0, 1], [0, 1], linestyle='--')
+
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+
+plt.savefig("roc_curve.png")
+plt.legend()
+plt.show()
