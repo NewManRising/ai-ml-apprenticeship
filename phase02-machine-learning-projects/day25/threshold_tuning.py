@@ -107,4 +107,4 @@ for t in thresholdss:
 results_df = pd.DataFrame(results)
 results_df.to_csv("threshold_tuning.csv", index=False)
 print("\nThreshold Comparison Table:")
-print(results_df)
+print(results_df.to_string())
