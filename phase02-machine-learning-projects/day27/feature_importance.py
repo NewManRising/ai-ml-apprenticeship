@@ -14,7 +14,7 @@ data = pd.read_csv("cleaned_credit_data.csv")
 df = data.copy()
 
 # Quick Look At Data
-print(df.head().to_string())
+print(df.head(5).to_string())
 #----------------------------------------------------------------------------------------------------------------------
 # Defining Features
 X = df.drop(columns=["risk"])
@@ -49,7 +49,7 @@ pipeline = Pipeline([
 params = {
     "model__n_estimators": [100, 200, 300],
     "model__max_depth": [None, 2, 5],
-    "model__min_samples_leaf": [2, 3, 3]
+    "model__min_samples_leaf": [2, 3, 5]
 }
 
 # Fitting Model
@@ -78,12 +78,14 @@ print(feat_importance_df.head(10).to_string())
 # Plotting Feature Importance
 top_features = feat_importance_df.head(10)
 
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(12, 8))
 plt.barh(top_features["feature"], top_features["importance"])
 plt.gca().invert_yaxis()
 
 plt.title("Top Feature Importances")
 plt.xlabel("Importance")
+
+plt.tight_layout()
 
 plt.savefig("feature_importance_plot.png")
 plt.show()
