@@ -37,7 +37,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Defining Column Types
 num_cols = X.select_dtypes(include=["int64", "float64"]).columns
-cat_cols = X.select_dtypes(include=["object", "str"]).columns
+cat_cols = X.select_dtypes(include=["object", "str", "category"]).columns
 
 # Building Preprocessor
 preprocessor = ColumnTransformer([
@@ -48,7 +48,7 @@ preprocessor = ColumnTransformer([
 # Building Pipeline
 pipeline = Pipeline([
     ("preprocessing", preprocessor),
-    ("model", RandomForestClassifier(random_state=42, class_weight="balanced", n_jobs=-1)),
+    ("model", RandomForestClassifier(random_state=42, class_weight="balanced", n_jobs=-1))
 ])
 #----------------------------------------------------------------------------------------------------------------------
 # GridSearchCV Parameters
