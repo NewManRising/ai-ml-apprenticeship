@@ -13,7 +13,7 @@ data = pd.read_csv("cleaned_credit_data.csv")
 df = data.copy()
 
 # Quick Look At Data
-print(df.head().to_string())
+print(df.head(5).to_string())
 #----------------------------------------------------------------------------------------------------------------------
 # Defining Features
 X = df.drop(columns=["risk"])
@@ -24,6 +24,13 @@ y = y.map({"good": 0, "bad": 1})
 print("\nFeatures Shape:", X.shape)
 print("Labels Shape:", y.shape)
 print("Target Distribution:\n", y.value_counts())
+#----------------------------------------------------------------------------------------------------------------------
+# Engineering New Features
+X["credit_group"] = pd.qcut(X["credit_amount"], q=3, labels=["low", "medium", "high"])
+
+X["purpose_credit_interaction"] = X["purpose"] + "_" + X["credit_group"].astype(str)
+
+X["housing_savings"] = X["housing"] + "_" + X["saving_accounts"]
 #----------------------------------------------------------------------------------------------------------------------
 # Train-Test Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
