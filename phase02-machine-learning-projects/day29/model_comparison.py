@@ -4,10 +4,11 @@ import pandas as pd
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+
 #----------------------------------------------------------------------------------------------------------------------
 # Loading Data
 data = pd.read_csv("cleaned_credit_data.csv")
@@ -69,6 +70,7 @@ for name, model in models.items():
 
     report = classification_report(y_test, y_pred, output_dict=True)
 
+    # noinspection PyTypeChecker
     results.append({
     "model": name,
     "precision_1": report["1"]["precision"],
@@ -83,5 +85,7 @@ for name, model in models.items():
     print(classification_report(y_test, y_pred))
     print(confusion_matrix(y_test, y_pred))
 
-    results_df = pd.DataFrame(results)
-    print(results_df.sort_values(by="f1_1", ascending=False))
+# Results Comparison Table
+print('\n*** Comparison Table For All Models On Minority Class ***\n')
+results_df = pd.DataFrame(results)
+print(results_df.sort_values(by="f1_1", ascending=False))
