@@ -39,7 +39,7 @@ preprocessor = ColumnTransformer([
     ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols)
 ])
 
-# Creating Pipeline For Each Model
+# Creating Pipeline
 log_reg = Pipeline([
     ("preprocessor", preprocessor),
     ("model", LogisticRegression(random_state=42, max_iter=1000, class_weight="balanced")),
@@ -62,7 +62,7 @@ log_regGS = GridSearchCV(
     n_jobs=-1,
 )
 
-# Training Models
+# Training Model
 log_regGS.fit(X_train, y_train)
 #----------------------------------------------------------------------------------------------------------------------
 # Saving Model

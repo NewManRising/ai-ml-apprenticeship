@@ -1,12 +1,6 @@
 # Imports
 import joblib
 import pandas as pd
-
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.model_selection import train_test_split, GridSearchCV
 #----------------------------------------------------------------------------------------------------------------------
 # Loading Model
 model = joblib.load("models/best_credit_model.pkl")
@@ -17,7 +11,7 @@ new_data = pd.DataFrame([{
     "age": 37,
     "sex": "male",
     "job": 2,
-"housing": "own",
+    "housing": "own",
     "saving_accounts": "little",
     "checking_account": "moderate",
     "credit_amount": 3200,
