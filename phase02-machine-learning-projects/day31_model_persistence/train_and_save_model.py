@@ -19,13 +19,6 @@ y = df["risk"]
 
 y = y.map({"good": 0, "bad": 1})
 #----------------------------------------------------------------------------------------------------------------------
-# Engineering New Features
-X["credit_group"] = pd.qcut(X["credit_amount"], q=3, labels=["low", "medium", "high"])
-
-X["purpose_credit_interaction"] = X["purpose"] + "_" + X["credit_group"].astype(str)
-
-X["housing_savings"] = X["housing"] + "_" + X["saving_accounts"]
-#----------------------------------------------------------------------------------------------------------------------
 # Train-Test Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y )
 
