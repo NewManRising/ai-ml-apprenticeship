@@ -1,6 +1,6 @@
 ## Day 35 — Project Polish
 
-Improved API structure and production readiness. Tested all end points and everything works fine. 
+Improved API structure and production readiness. Tested all end points and everything works fine. The model is now live and hosted on Render.
 
 ### Improvements
 - Config management using environment variables
@@ -20,3 +20,6 @@ GET / > status message
 GET /health > API health
 POST /predict > prediction + risk score
 ```
+
+## Live API
+https://ai-ml-apprenticeship.onrender.com/docs
