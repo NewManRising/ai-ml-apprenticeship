@@ -33,6 +33,7 @@ pandas==3.0.0
 pandas-stubs==3.0.0.260204
 pillow==12.1.0
 pydantic==2.13.3
+pydantic-settings==2.14.0
 pydantic_core==2.46.3
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
