@@ -1,8 +1,8 @@
 # AI / Machine Learning Apprenticeship
 
-This repository documents a structured, hands-on buildout of applied machine learning and AI systems.
+This repository documents a structured, hands-on build out of applied machine learning and AI systems.
 
-The focus is simple: take raw data, turn it into usable features, build models, and ship working solutions. Everything here is organized into phases that mirror how real-world projects are developed — from data handling and modeling to deployment and iteration.
+The focus is simple: take raw data, turn it into usable features, build models, and ship working solutions. Everything here is organized into phases from data handling and modeling to deployment and iteration.
 
 ---
 
@@ -28,19 +28,28 @@ ai-ml-apprenticeship/
 │
 ├── phase01-python-data-foundations/
 ├── phase02-machine-learning-projects/
-├── phase03-deep-learning/
-├── phase04-nlp-and-generative-ai/
+├── phase03-product-builds/
+├── phase04-ai-systems-and-llms/
 ├── phase05-production-and-deployment/
+│
+├── projects/
 │
 └── README.md
 ```
 
-* **Phase 01** — Core data handling, Python workflows, and dataset preparation
-* **Phase 02** — Classical machine learning projects and model pipelines
-* **Phase 03** — Neural networks and deep learning systems
-* **Phase 04** — NLP, transformers, and generative AI applications
-* **Phase 05** — Deployment, APIs, and production-level systems
+## Phases Overview
 
+- **Phase 01** — Core Python, data handling, data structures, and foundational workflows  
+
+- **Phase 02** — Classical machine learning, model building, evaluation, and ML pipelines  
+
+- **Phase 03** — Job-ready full-stack product builds (APIs, external integrations, data processing, UI, real-world tools)  
+
+- **Phase 04** — AI systems and LLMs (prompting, embeddings, RAG, agents, applied AI pipelines with standalone learning + projects)  
+
+- **Phase 05** — Production systems (deployment, databases, authentication, scaling, monitoring, and real-world application delivery)  
+
+- **projects/** — Clean, polished portfolio versions of completed systems 
 ---
 
 ## Approach
@@ -85,7 +94,7 @@ The intent here is to:
 
 * Code is organized by phase and day for traceability
 * Outputs are reproducible and tied to specific datasets
-* Work is iterative — earlier phases may be revisited and improved
+* Work is iterative. Earlier phases may be revisited and improved
 
 ---
 
@@ -99,5 +108,20 @@ This repository will continue evolving toward:
 * Production-ready deployments
 
 ---
+## Resources Used
+### Python
 
+1) Corey Schafer - Python Tutorial Playlist:
+https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
+
+### FastAPI
+1) FastAPI Official Docs: https://fastapi.tiangolo.com/
+2) OneUpTime (File Downloads): https://oneuptime.com/blog/post/2026-02-03-fastapi-file-downloads/view
+3) Dev Community (Streaming Response): https://dev.to/ashraful/fastapi-streaming-response-39c5
+4) Code with Josh - FastAPI Crash Course 2025: https://youtu.be/nWWPlEO0he8?si=HzG-J-gzhbsil_pR
+5) pixegami - FastAPI for AI: https://youtu.be/uDUfZyNXFX0?si=x0o7e4lx6aU6h1vp
+
+### Streamlit
+1) pixegami - Streamlit: The Fastest Way To Build Python Apps? https://www.youtube.com/watch?v=D0D4Pa22iG0&t=1s
+---
 If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.
