@@ -112,7 +112,69 @@ This repository will continue evolving toward:
 ### Python
 
 1) Corey Schafer - Python Tutorial Playlist:
-https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
+   https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
+
+### Data Processing
+1) Pandas Official Docs - https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html
+
+    https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html
+
+    https://pandas.pydata.org/docs/user_guide/missing_data.html?utm_source=chatgpt.com
+
+2) Numpy Official Docs - https://numpy.org/doc/stable/
+
+### Machine Learning
+
+1) Scikit-Learn Official Docs - 
+   
+   Logistic Regression:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+   
+   Class Weight:
+    https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html
+  
+   GridSearchCV:
+    https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
+   
+   Multimetric Scoring:
+    https://scikit-learn.org/stable/modules/model_evaluation.html#multimetric-scoring
+   
+   Multimetric Cross_validation
+    https://scikit-learn.org/stable/modules/cross_validation.html#multimetric-cross-validation
+   
+   Label Encoding
+    https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html
+   
+   One-Hot Encoding
+   https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html
+
+   Decision Tree Classifier
+   https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+
+   Decision Trees
+   https://scikit-learn.org/stable/modules/tree.html
+
+   ROC AUC Score
+   https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html
+
+   Feature Importances With A Forest Of Tree
+   https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html
+
+   String Name Scorers
+   https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-string-names
+
+   Cross Validation
+   https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
+
+   Cross Val Score
+   https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html
+
+
+### Visualization
+1) Matplotlib Official Docs - 
+   https://matplotlib.org/
+2) Seaborn Official Docs - 
+   https://seaborn.pydata.org/
 
 ### FastAPI
 1) FastAPI Official Docs: https://fastapi.tiangolo.com/
@@ -121,7 +183,16 @@ https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6
 4) Code with Josh - FastAPI Crash Course 2025: https://youtu.be/nWWPlEO0he8?si=HzG-J-gzhbsil_pR
 5) pixegami - FastAPI for AI: https://youtu.be/uDUfZyNXFX0?si=x0o7e4lx6aU6h1vp
 
+
+### Pydantic
+1) Pydantic Official Docs - https://pydantic.dev/docs/
+
+### Render
+1) Render Official Docs - https://render.com/docs/web-services
 ### Streamlit
 1) pixegami - Streamlit: The Fastest Way To Build Python Apps? https://www.youtube.com/watch?v=D0D4Pa22iG0&t=1s
+2) Streamlit Official Docs - Getting Started:
+https://docs.streamlit.io/get-started/installation/streamlit-playground
+3) Code with Josh - Streamlit Tutorial: Build Python Apps in less than a day: https://www.youtube.com/watch?v=8W8NQFFbDcU
 ---
 If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.
