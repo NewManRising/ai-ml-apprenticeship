@@ -119,7 +119,7 @@ This repository will continue evolving toward:
 
     https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html
 
-    https://pandas.pydata.org/docs/user_guide/missing_data.html?utm_source=chatgpt.com
+    https://pandas.pydata.org/docs/user_guide/missing_data.html?
 
 2) Numpy Official Docs - https://numpy.org/doc/stable/
 
