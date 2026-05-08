@@ -115,10 +115,15 @@ This repository will continue evolving toward:
    https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
 
 ### Data Processing
-1) Pandas Official Docs - https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html
-
+1) Pandas Official Docs - 
+   
+   Get_dummies:
+   https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html
+    
+   Value_counts:
     https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html
-
+   
+   Missing Data:
     https://pandas.pydata.org/docs/user_guide/missing_data.html?
 
 2) Numpy Official Docs - https://numpy.org/doc/stable/
@@ -157,7 +162,7 @@ This repository will continue evolving toward:
    ROC AUC Score
    https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html
 
-   Feature Importances With A Forest Of Tree
+   Feature Importances With A Forest Of Trees
    https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html
 
    String Name Scorers
@@ -192,7 +197,12 @@ This repository will continue evolving toward:
 ### Streamlit
 1) pixegami - Streamlit: The Fastest Way To Build Python Apps? https://www.youtube.com/watch?v=D0D4Pa22iG0&t=1s
 2) Streamlit Official Docs - Getting Started:
-https://docs.streamlit.io/get-started/installation/streamlit-playground
+
+    https://docs.streamlit.io/get-started/fundamentals/main-concepts
+
+   API Reference: 
+   https://docs.streamlit.io/develop/api-reference
 3) Code with Josh - Streamlit Tutorial: Build Python Apps in less than a day: https://www.youtube.com/watch?v=8W8NQFFbDcU
+4) freeCodeCamp.org - Build 12 Data Science Apps with Python and Streamlit - Full Course: https://www.youtube.com/watch?v=JwSS70SZdyM
 ---
 If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.
