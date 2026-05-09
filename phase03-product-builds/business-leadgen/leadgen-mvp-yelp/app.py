@@ -1,5 +1,4 @@
 import io
-import openpyxl
 import pandas as pd
 from fastapi import FastAPI
 from data.data_source import get_businesses
