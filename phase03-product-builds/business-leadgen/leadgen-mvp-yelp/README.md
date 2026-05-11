@@ -1,5 +1,15 @@
 ## Current Status
-The leadgen MVP is done. It is not deployed and was meant more as a practice to build upon. 
+The leadgen MVP is done. It is deployed.
+
+I made a tiny edit to the frontend streamlit code. I swapped out the request from the local backend URL and put in the deployed backend URL so the frontend can communicate when deployed.
+
+So it basically went from "http://127.0.0.1:8000/leads" to "https://leadgen-mvp-yelp.onrender.com/leads"
+
+Frontend Url: https://yelp-lead-gen.onrender.com/
+
+Backend Url:  https://leadgen-mvp-yelp.onrender.com/docs
+
+
 
 LeadGen MVP v0.1 currently includes:
 
