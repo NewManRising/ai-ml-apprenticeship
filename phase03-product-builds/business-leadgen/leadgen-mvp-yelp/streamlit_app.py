@@ -65,12 +65,13 @@ if st.button("Generate Leads"):
 
         st.dataframe(df, width="stretch")
 
-        with open("leads.xlsx", "rb") as file:
-            st.download_button(
-                label="Download Excel File",
-                data=file,
-                file_name="leads.xlsx",
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                icon=":material/download:"
+       # Local Development Only
+       # with open("leads.xlsx", "rb") as file:
+       #     st.download_button(
+       #         label="Download Excel File",
+       #         data=file,
+       #         file_name="leads.xlsx",
+       #         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       #         icon=":material/download:"
 
-            )
+       #     )
