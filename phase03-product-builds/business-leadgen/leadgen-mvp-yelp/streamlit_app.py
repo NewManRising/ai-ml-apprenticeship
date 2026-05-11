@@ -1,6 +1,9 @@
+import os
 import requests
 import pandas as pd
 import streamlit as st
+
+API_BASE_URL = os.getenv("API_BASE_URL")
 
 
 st.set_page_config(page_title="LeadGen MVP")
@@ -13,9 +16,9 @@ col1, col2 = st.columns(2, border=True, )
 
 with col1:
     location = st.text_input(
-    "Location",
-    placeholder="Dallas, TX"
-)
+        "Location",
+        placeholder="Dallas, TX"
+    )
     min_rating = st.slider(
         "Minimum Rating",
         min_value=1.0,
@@ -24,7 +27,6 @@ with col1:
         step=0.1
     )
 
-
 with col2:
     keyword = st.text_input(
         "Business Type",
@@ -32,11 +34,11 @@ with col2:
     )
 
     min_reviews = st.slider(
-    "Minimum Reviews",
-    min_value=0,
-    max_value=500,
-    value=50
-)
+        "Minimum Reviews",
+        min_value=0,
+        max_value=500,
+        value=50
+    )
 
 if st.button("Generate Leads"):
 
@@ -48,9 +50,10 @@ if st.button("Generate Leads"):
     }
     with st.spinner("Generating Leads...", show_time=True):
         response = requests.get(
-        "http://127.0.0.1:8000/leads",
-        params=params
-    )
+            f"{API_BASE_URL}/leads",
+            params=params
+        )
+        response.raise_for_status()
 
     data = response.json()
 
