@@ -2,7 +2,9 @@ import os
 import requests
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
 
+load_dotenv()
 API_BASE_URL = os.getenv("API_BASE_URL")
 
 
@@ -49,21 +51,27 @@ if st.button("Generate Leads"):
         "min_reviews": min_reviews
     }
     with st.spinner("Generating Leads...", show_time=True):
-        response = requests.get(
-            f"{API_BASE_URL}/leads",
+        # Local Development Only
+        # response = requests.get(
+         #   "http://127.0.0.1:8000/leads",
+         #   params=params
+         # )
+         response = requests.get(
+           f"{API_BASE_URL}/leads",
             params=params
-        )
-        response.raise_for_status()
+         )
 
-    data = response.json()
+         response.raise_for_status()
 
-    if len(data) == 0:
-        st.warning("No Leads found")
-    else:
-        df = pd.DataFrame(data)
-        st.success(f"{len(data)} Leads found!")
+         data = response.json()
 
-        st.dataframe(df, width="stretch")
+         if len(data) == 0:
+            st.warning("No Leads found")
+         else:
+            df = pd.DataFrame(data)
+            st.success(f"{len(data)} Leads found!")
+
+            st.dataframe(df, width="stretch")
 
        # Local Development Only
        # with open("leads.xlsx", "rb") as file:
