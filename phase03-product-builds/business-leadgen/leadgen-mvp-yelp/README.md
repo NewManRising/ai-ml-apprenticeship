@@ -1,18 +1,18 @@
 ## Current Status
-The leadgen MVP is done. It is deployed.
+The leadgen MVP is done. It is deployed on Render.
 
 I made a tiny edit to the frontend streamlit code. I swapped out the request from the local backend URL and put in the Render backend URL so the frontend can communicate when deployed.
 
-So it basically went from "http://127.0.0.1:8000/leads" to " https://leadgen-mvp-yelp.onrender.com/leads"
+So it basically went from "http://127.0.0.1:8000/leads" to "https://leadgen-backend-ivi1.onrender.com/leads"
 
 Local Backend Url: http://127.0.0.1:8000
 
 Local Frontend Url: streamlit run streamlit_app.py
 
 
-Render Frontend Url: https://yelp-lead-gen.onrender.com
+Render Frontend Url: https://yelp-lead-gen.onrender.com/
 
-Render Backend Url:  https://leadgen-mvp-yelp.onrender.com/docs
+Render Backend Url:  https://leadgen-backend-ivi1.onrender.com/docs
 
 
 
@@ -59,7 +59,6 @@ LeadGen MVP v0.1 currently includes:
 - FastAPI backend
 - Yelp API integration
 - Filtering and scoring
-- Excel export
 - Streamlit frontend
 - Frontend ↔ backend communication
 

@@ -10,11 +10,11 @@ API_BASE_URL = os.getenv("API_BASE_URL")
 
 st.set_page_config(page_title="LeadGen MVP")
 
-st.title("AI Sales Lead Generator")
+st.title("Yelp Sales Lead Generator")
 
 st.write("Get business leads with a click of a button.")
 
-col1, col2 = st.columns(2, border=True, )
+col1, col2 = st.columns(2, border=True)
 
 with col1:
     location = st.text_input(
