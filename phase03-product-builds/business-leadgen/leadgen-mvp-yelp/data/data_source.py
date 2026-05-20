@@ -24,9 +24,13 @@ def get_businesses(location: str, keyword: str, min_rating=4.0, min_reviews=50):
     data = response.json()
     yelp_businesses = data.get("businesses", [])
     businesses_list = []
-    
+
 
     for business in yelp_businesses:
+
+        business_url = business.get("url", "")
+        clean_url = business_url.split("?")[0]
+        
         businesses_list.append({
             "Name": business.get("name"),
             "Rating": business.get("rating"),
@@ -34,7 +38,7 @@ def get_businesses(location: str, keyword: str, min_rating=4.0, min_reviews=50):
             "Address": ",".join(business.get("location", {}).get("display_address", [])),
             "Phone": business.get("display_phone"),
             "Out Of Business": business.get("is_closed"),
-            "Url": business.get("url")
+            "Url": clean_url
 
         })
 
