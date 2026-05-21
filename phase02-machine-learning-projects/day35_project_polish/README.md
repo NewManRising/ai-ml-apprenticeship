@@ -28,7 +28,7 @@ POST /predict > prediction + risk score
 ### What I Learned
 I learned the workflows and best practices of machine learning. I then learned how to make a machine learning model configurable, portable, and deployable.
 
-The FastAPI endpoints were significant as well. They are basically requests coming from a user or client where the API performs an action (or response). The FastAPI generators correspond to CRUD:
+The FastAPI endpoints were significant as well. They are basically requests coming from a user or client where the API performs an action (or response). The FastAPI decorators correspond to CRUD:
 
 - Create = Post
 - Read = Get

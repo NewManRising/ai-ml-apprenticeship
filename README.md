@@ -204,5 +204,22 @@ This repository will continue evolving toward:
    https://docs.streamlit.io/develop/api-reference
 3) Code with Josh - Streamlit Tutorial: Build Python Apps in less than a day: https://www.youtube.com/watch?v=8W8NQFFbDcU
 4) freeCodeCamp.org - Build 12 Data Science Apps with Python and Streamlit - Full Course: https://www.youtube.com/watch?v=JwSS70SZdyM
+
+
+
+### Google Places API
+1) Overview - https://developers.google.com/maps/documentation/places/web-service/overview
+
+   Place ID - https://developers.google.com/maps/documentation/places/web-service/place-id
+
+   Text Search - https://developers.google.com/maps/documentation/places/web-service/text-search
+
+   Place Details - https://developers.google.com/maps/documentation/places/web-service/place-details
+
+   Place Data Fields - https://developers.google.com/maps/documentation/places/web-service/data-fields
+
+   Field Mask - https://developers.google.com/maps/documentation/places/web-service/choose-fields
+
+
 ---
 If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.
