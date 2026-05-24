@@ -6,48 +6,71 @@ load_dotenv()
 
 PLACES_KEY = os.getenv("GOOGLE_PLACES_API_KEY")
 
-def search_google_places(location, keyword):
+def search_google_places(location, keyword, min_rating, min_reviews):
     url = "https://places.googleapis.com/v1/places:searchText"
 
 
     headers = {
     "Content-Type": "application/json",
     "X-Goog-Api-Key": PLACES_KEY,
-    "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.types,places.websiteUri,places.nationalPhoneNumber,places.businessStatus,places.id"
+    "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.websiteUri,places.nationalPhoneNumber,places.businessStatus,places.id"
 }
 
 
     params = {
     "textQuery": f"{keyword} in {location}",
     "pageSize": 5,
-    "strictTypeFiltering": True
+    "minRating": min_rating,
+    "minReview": min_reviews,
+    "openNow": True,
+    "languageCode": "en-US",
+
 }
 
     response = requests.post(url, headers=headers, json=params)
     data = response.json()
 
-
     def cleaned_json(results):
-        cleaned = []
+
+        filtered = []
 
         for place in results:
+
             business_url = place.get("websiteUri", "")
             clean_url = business_url.split("?")[0]
+
+            rating = place.get("rating", 0) or 0
+            reviews = place.get("userRatingCount", 0) or 0
+
+            if rating < min_rating:
+                continue
+
+            if reviews < min_reviews:
+                continue
+
+            rating_score = (rating / 5) * 70
+            review_score = (min(reviews, 500) / 500) * 30
 
             business = {
                 "name": place.get("displayName", {}).get("text", ""),
                 "address": place.get("formattedAddress", ""),
                 "phone": place.get("nationalPhoneNumber", ""),
                 "website": clean_url,
-                "rating": place.get("rating", ""),
-                "reviews": place.get("userRatingCount", ""),
+                "rating": rating,
+                "reviews": reviews,
                 "status": place.get("businessStatus", ""),
-
+                "Score": round(rating_score + review_score, 2)
             }
 
-            cleaned.append(business)
+            filtered.append(business)
 
-        return cleaned
+        filtered.sort(key=lambda x: x["Score"], reverse=True)
+
+        return filtered
+
+
+
+
     raw_results = data.get("places", [])
 
     cleaned_results = cleaned_json(raw_results)

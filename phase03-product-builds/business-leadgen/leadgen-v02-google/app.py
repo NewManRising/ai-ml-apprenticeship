@@ -6,9 +6,9 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Google Led Gen app working!"}
+    return {"message": "Google Led Gen app is working!"}
 
 
 @app.get("/leads")
-def get_leads(location: str, keyword: str):
-    return search_google_places(location, keyword)
+def get_leads(location: str, keyword: str, min_rating: float = 4.0, min_reviews: int = 50):
+    return search_google_places(location, keyword, min_rating, min_reviews)
