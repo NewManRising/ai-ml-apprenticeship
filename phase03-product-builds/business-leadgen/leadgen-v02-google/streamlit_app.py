@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 
 
+API_BASE_URL = os.getenv("API_BASE_URL")
+
 
 st.set_page_config(page_title="LeadGen v02")
 
@@ -49,14 +51,15 @@ if st.button("Generate Leads"):
     }
     with st.spinner("Generating Leads...", show_time=True):
         # Local Development Only
+        # response = requests.get(
+        #   "http://127.0.0.1:8000/leads",
+        #   params=params
+        # )
+
          response = requests.get(
-            "http://127.0.0.1:8000/leads",
+           f"{API_BASE_URL}/leads",
            params=params
-          )
-         # response = requests.get(
-         #  f"{API_BASE_URL}/leads",
-         #  params=params
-         # )
+            )
 
          response.raise_for_status()
 
