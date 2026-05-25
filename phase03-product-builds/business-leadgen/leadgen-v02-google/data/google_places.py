@@ -21,13 +21,13 @@ def search_google_places(location, keyword, min_rating, min_reviews):
     "textQuery": f"{keyword} in {location}",
     "pageSize": 5,
     "minRating": min_rating,
-    "minReview": min_reviews,
     "openNow": True,
     "languageCode": "en-US",
 
 }
 
     response = requests.post(url, headers=headers, json=params)
+    response.raise_for_status()
     data = response.json()
 
     def cleaned_json(results):
@@ -41,6 +41,10 @@ def search_google_places(location, keyword, min_rating, min_reviews):
 
             rating = place.get("rating", 0) or 0
             reviews = place.get("userRatingCount", 0) or 0
+            status = place.get("businessStatus", "")
+
+            if status != "OPERATIONAL":
+                continue
 
             if rating < min_rating:
                 continue
@@ -52,13 +56,13 @@ def search_google_places(location, keyword, min_rating, min_reviews):
             review_score = (min(reviews, 500) / 500) * 30
 
             business = {
-                "name": place.get("displayName", {}).get("text", ""),
-                "address": place.get("formattedAddress", ""),
-                "phone": place.get("nationalPhoneNumber", ""),
-                "website": clean_url,
-                "rating": rating,
-                "reviews": reviews,
-                "status": place.get("businessStatus", ""),
+                "Name": place.get("displayName", {}).get("text", ""),
+                "Address": place.get("formattedAddress", ""),
+                "Phone": place.get("nationalPhoneNumber", ""),
+                "Website": clean_url,
+                "Rating": rating,
+                "Reviews": reviews,
+                "Status": status,
                 "Score": round(rating_score + review_score, 2)
             }
 
