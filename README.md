@@ -221,7 +221,13 @@ This repository will continue evolving toward:
    Field Mask - https://developers.google.com/maps/documentation/places/web-service/choose-fields
 
 ### Web Scraping
-1. Beautiful Soup - Quick start: https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start
+1. Beautiful Soup - 
+   
+   Quick start: https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start
+ 
+   decompose: https://beautiful-soup-4.readthedocs.io/en/latest/#decompose
+
+   get_text: https://beautiful-soup-4.readthedocs.io/en/latest/#get-text
 2. freeCodeCamp - Beautiful Soup Tutorial - Web Scraping in Python: https://www.youtube.com/watch?v=87Gx3U0BDlo
 
 
