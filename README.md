@@ -220,6 +220,22 @@ This repository will continue evolving toward:
 
    Field Mask - https://developers.google.com/maps/documentation/places/web-service/choose-fields
 
+### Web Scraping
+1. Beautiful Soup - Quick start: https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start
+2. freeCodeCamp - Beautiful Soup Tutorial - Web Scraping in Python: https://www.youtube.com/watch?v=87Gx3U0BDlo
+
+
+### Requests
+1. Requests (Python Library): https://requests.readthedocs.io/en/latest/
+  
+   Response Status Codes: https://requests.readthedocs.io/en/latest/user/quickstart/#response-status-codes
+
+3. Wikipedia - List of HTTP Status Codes: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+   List of HTTP Header Fields: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+
+
 
 ---
 If you're reviewing this repository, start with the latest phase for the most current work, then move backward for context.

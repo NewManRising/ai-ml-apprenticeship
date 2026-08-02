@@ -32,13 +32,13 @@ This version upgrades the original Yelp MVP by using Google Places API (New) as 
 ![Excel Download](images/v02%20leadgen%20download.png)
 
 #### Clean URLs to websites 
-![Excel Download](images/v02%20leadgen%20url.png)
+![URLs](images/v02%20leadgen%20url.png)
 
 #### FastAPI Docs
 
 ![FastAPI Docs](images/v02%20leadgen%20FastAPI%20Docs.png)
 
-![Excel Download](images/v02%20leadgen%20search%20leads.png)
+![FastAPI Docs](images/v02%20leadgen%20search%20leads.png)
 
 
 
