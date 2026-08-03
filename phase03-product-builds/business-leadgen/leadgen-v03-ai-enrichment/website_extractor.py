@@ -2,9 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 
 
+
 def extract_website_text(url):
-    response = requests.get(url, timeout=10)
-    response.raise_for_status()
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+
+    except requests.RequestException:
+        return None
 
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -12,7 +17,7 @@ def extract_website_text(url):
     for tag in soup(["script", "style", "noscript", "header", "footer", "nav"]):
         tag.decompose()
 
-    text = soup.get_text(separator=" ", strip=True)
+    text = soup.get_text(strip=True)
 
     # Collapse repeated spaces, tabs, and newlines
     text = " ".join(text.split())

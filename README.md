@@ -228,6 +228,8 @@ This repository will continue evolving toward:
    decompose: https://beautiful-soup-4.readthedocs.io/en/latest/#decompose
 
    get_text: https://beautiful-soup-4.readthedocs.io/en/latest/#get-text
+
+   Errors and Exceptions: https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions
 2. freeCodeCamp - Beautiful Soup Tutorial - Web Scraping in Python: https://www.youtube.com/watch?v=87Gx3U0BDlo
 
 
