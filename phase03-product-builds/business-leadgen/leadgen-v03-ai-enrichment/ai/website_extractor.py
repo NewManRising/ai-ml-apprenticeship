@@ -28,5 +28,4 @@ def extract_website_text(url):
     return text
     
 
-print(extract_website_text("https://www.gametz.com"))
 
