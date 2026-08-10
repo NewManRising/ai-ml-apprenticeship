@@ -238,6 +238,12 @@ This repository will continue evolving toward:
 2. freeCodeCamp - Beautiful Soup Tutorial - Web Scraping in Python: https://www.youtube.com/watch?v=87Gx3U0BDlo
 
 
+### OpenAI API
+1. Quickstart: https://developers.openai.com/api/docs/quickstart
+2. Models: https://developers.openai.com/api/docs/models/all
+3. Responses Overview: https://developers.openai.com/api/reference/responses/overview
+
+
 ### Requests
 1. Requests (Python Library): https://requests.readthedocs.io/en/latest/
   
