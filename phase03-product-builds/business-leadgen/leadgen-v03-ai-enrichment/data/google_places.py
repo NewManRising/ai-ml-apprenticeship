@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+from ai.company_enrichment import summarize_company
 from ai.website_extractor import extract_website_text
 
 load_dotenv()
@@ -57,8 +58,15 @@ def search_google_places(location, keyword, min_rating, min_reviews):
             review_score = (min(reviews, 500) / 500) * 30
 
             website_text = None
+            ai_enrichment = None
             if clean_url:
                 website_text = extract_website_text(clean_url)
+
+            if website_text:
+                try:
+                    ai_enrichment = summarize_company(website_text)
+                except Exception:
+                    ai_enrichment = None
 
             business = {
                 "Name": place.get("displayName", {}).get("text", ""),
@@ -69,7 +77,10 @@ def search_google_places(location, keyword, min_rating, min_reviews):
                 "Reviews": reviews,
                 "Status": status,
                 "Score": round(rating_score + review_score, 2),
-                "Website_Text": website_text
+                "Company_Summary": ai_enrichment.company_summary if ai_enrichment else None,
+                "Products_Services": ai_enrichment.products_services if ai_enrichment else None,
+                "Sales_Insight": ai_enrichment.sales_insight if ai_enrichment else None,
+                "Qualification": ai_enrichment.qualification if ai_enrichment else None
             }
 
             filtered.append(business)

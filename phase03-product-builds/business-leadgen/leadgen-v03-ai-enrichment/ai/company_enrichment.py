@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from schemas import CompanyEnrichment
 from ai.website_extractor import extract_website_text
 
-load_dotenv()
+load_dotenv(override=True)
 
 my_key = os.getenv("OPENAI_KEY")
 client = OpenAI(api_key=my_key)
@@ -20,8 +20,10 @@ def summarize_company(website_text):
     Return:
         - A concise company summary
         - A list of the main products or services
-        - Useful B2B sales insights
-        - Whether it looks like a potentially valuable prospect and why
+        - A useful sales insight describing a potential business need, opportunity, or angle
+        - A qualification assessment explaining whether this looks like a potentially valuable prospect and why
+
+    Do not invent facts that are not supported by the website content.
 
     Website content:
     {website_text}
@@ -30,9 +32,3 @@ def summarize_company(website_text):
 
 )
     return response.output_parsed
-
-
-website_text = extract_website_text("https://www.gametz.com")
-summary = summarize_company(website_text)
-
-print(summary)
