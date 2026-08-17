@@ -187,10 +187,12 @@ This repository will continue evolving toward:
 3) Dev Community (Streaming Response): https://dev.to/ashraful/fastapi-streaming-response-39c5
 4) Code with Josh - FastAPI Crash Course 2025: https://youtu.be/nWWPlEO0he8?si=HzG-J-gzhbsil_pR
 5) pixegami - FastAPI for AI: https://youtu.be/uDUfZyNXFX0?si=x0o7e4lx6aU6h1vp
+6) FastAPI (official docs) - Bigger Applications: https://fastapi.tiangolo.com/tutorial/bigger-applications/
 
 
 ### Pydantic
 1) Pydantic Official Docs - https://pydantic.dev/docs/
+2) Configuration (official docs) - https://pydantic.dev/docs/validation/2.11/api/pydantic/config/
 
 ### Render
 1) Render Official Docs - https://render.com/docs/web-services
