@@ -65,7 +65,8 @@ def search_google_places(location, keyword, min_rating, min_reviews):
             if website_text:
                 try:
                     ai_enrichment = summarize_company(website_text)
-                except Exception:
+                except Exception as e:
+                    print(f"AI enrichment failed for {clean_url}: {e}")
                     ai_enrichment = None
 
             business = {
