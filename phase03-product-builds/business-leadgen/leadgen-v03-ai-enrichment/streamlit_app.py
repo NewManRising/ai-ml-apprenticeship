@@ -1,4 +1,5 @@
 import os
+import io
 import requests
 import pandas as pd
 import streamlit as st
@@ -76,20 +77,27 @@ if st.button("Generate Leads"):
 
             st.dataframe(df, width="stretch")
 
-            excel_response = requests.get(
-                f"{API_BASE_URL}/leads/excel",
-                params=params,
-                timeout=60
-            )
+         # Stores binary data in memory
+            excel_buffer = io.BytesIO()
 
-            excel_response.raise_for_status()
+
+           # excel_response = requests.get(
+           #     f"{API_BASE_URL}/leads/excel",
+           #     params=params,
+           #     timeout=60
+           # )
+
+            # Writes file to xlsx
+            df.to_excel(excel_buffer, index=False, engine="openpyxl")
+            excel_buffer.seek(0)
 
             st.download_button(
                 label="Download Excel File",
-                data=excel_response.content,
+                data=excel_buffer.getvalue(),
                 file_name="leads.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                icon=":material/download:"
+                icon=":material/download:",
+                on_click="ignore"
             )
 
        # Local Development Only
