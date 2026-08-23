@@ -113,6 +113,8 @@ This repository will continue evolving toward:
 
 1) Corey Schafer - Python Tutorial Playlist:
    https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
+2) Enum - Support for enumerations (Python official docs) - https://docs.python.org/3/library/enum.html
+3) Buffered Streams - BytesIO (Python Official docs) - https://docs.python.org/3/library/io.html#io.BytesIO
 
 ### Data Processing
 1) Pandas Official Docs - 
@@ -124,7 +126,8 @@ This repository will continue evolving toward:
     https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html
    
    Missing Data:
-    https://pandas.pydata.org/docs/user_guide/missing_data.html?
+    https://pandas.pydata.org/docs/user_guide/missing_data.html
+Dataframe.to_excel: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_excel.html
 
 2) Numpy Official Docs - https://numpy.org/doc/stable/
 
@@ -193,6 +196,7 @@ This repository will continue evolving toward:
 ### Pydantic
 1) Pydantic Official Docs - https://pydantic.dev/docs/
 2) Configuration (official docs) - https://pydantic.dev/docs/validation/2.11/api/pydantic/config/
+3) Enums - https://pydantic.dev/docs/validation/latest/api/pydantic/standard_library_types/?#enums
 
 ### Render
 1) Render Official Docs - https://render.com/docs/web-services
@@ -204,6 +208,8 @@ This repository will continue evolving toward:
 
    API Reference: 
    https://docs.streamlit.io/develop/api-reference
+
+   st.download_botton - https://docs.streamlit.io/develop/api-reference/widgets/st.download_button
 3) Code with Josh - Streamlit Tutorial: Build Python Apps in less than a day: https://www.youtube.com/watch?v=8W8NQFFbDcU
 4) freeCodeCamp.org - Build 12 Data Science Apps with Python and Streamlit - Full Course: https://www.youtube.com/watch?v=JwSS70SZdyM
 
