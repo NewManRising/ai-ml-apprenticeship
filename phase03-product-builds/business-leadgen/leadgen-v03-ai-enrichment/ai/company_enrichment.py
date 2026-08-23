@@ -22,13 +22,35 @@ def summarize_company(website_text):
         - A list of the main products or services
         - A useful sales insight describing a potential business need, opportunity, or angle
         - A qualification assessment explaining whether this looks like a potentially valuable prospect and why
+        
+        Qualification rules:
 
-    Do not invent facts that are not supported by the website content.
+        HIGH:
+        The company appears to have a clear potential need or strong fit
+        for business technology, software, AI, or related services.
 
-    Website content:
-    {website_text}
-    """,
-    text_format=CompanyEnrichment
+        MEDIUM:
+        There may be a plausible opportunity, but the need or fit is not
+        strongly supported by the website.
 
-)
+        LOW:
+        There is little evidence of a relevant business need or sales opportunity.
+
+        Return a qualification and briefly explain why.
+
+        Do not invent facts that are not supported by the website content.
+
+        Website content:
+        {website_text}
+        """,
+        text_format=CompanyEnrichment
+
+    )
     return response.output_parsed
+
+website_text = extract_website_text("https://www.gametz.com")
+
+summary = summarize_company(website_text)
+
+print(summary.qualification)
+print(summary.qualification_reason)

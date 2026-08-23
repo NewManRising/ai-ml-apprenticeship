@@ -81,7 +81,7 @@ def search_google_places(location, keyword, min_rating, min_reviews):
                 "Company_Summary": ai_enrichment.company_summary if ai_enrichment else None,
                 "Products_Services": ai_enrichment.products_services if ai_enrichment else None,
                 "Sales_Insight": ai_enrichment.sales_insight if ai_enrichment else None,
-                "Qualification": ai_enrichment.qualification if ai_enrichment else None
+                "Qualification": ai_enrichment.qualification.value if ai_enrichment else None
             }
 
             filtered.append(business)
