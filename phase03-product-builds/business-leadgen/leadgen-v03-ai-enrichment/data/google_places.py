@@ -45,6 +45,7 @@ def search_google_places(location, keyword, min_rating, min_reviews):
             reviews = place.get("userRatingCount", 0) or 0
             status = place.get("businessStatus", "")
 
+            # Filtering leads
             if status != "OPERATIONAL":
                 continue
 
@@ -54,14 +55,18 @@ def search_google_places(location, keyword, min_rating, min_reviews):
             if reviews < min_reviews:
                 continue
 
+            # Scoring leads
             rating_score = (rating / 5) * 70
             review_score = (min(reviews, 500) / 500) * 30
 
             website_text = None
             ai_enrichment = None
+
+            # Grabs cleaned website text
             if clean_url:
                 website_text = extract_website_text(clean_url)
 
+            # AI enrichment of text
             if website_text:
                 try:
                     ai_enrichment = summarize_company(website_text)
@@ -81,7 +86,8 @@ def search_google_places(location, keyword, min_rating, min_reviews):
                 "Company_Summary": ai_enrichment.company_summary if ai_enrichment else None,
                 "Products_Services": ai_enrichment.products_services if ai_enrichment else None,
                 "Sales_Insight": ai_enrichment.sales_insight if ai_enrichment else None,
-                "Qualification": ai_enrichment.qualification.value if ai_enrichment else None
+                "Qualification": ai_enrichment.qualification.value if ai_enrichment else None,
+                "Qualification_Reason": ai_enrichment.qualification_reason if ai_enrichment else None
             }
 
             filtered.append(business)

@@ -10,11 +10,11 @@ load_dotenv()
 API_BASE_URL = os.getenv("API_BASE_URL")
 
 
-st.set_page_config(page_title="LeadGen v02")
+st.set_page_config(page_title="LeadGen v03")
 
-st.title("Sales Lead Generator")
+st.title("Intelligent Sales Lead Generator")
 
-st.write("Get business leads with a click of a button.")
+st.write("Get business leads powered by AI with a click of a button.")
 
 col1, col2 = st.columns(2, border=True)
 
@@ -52,7 +52,7 @@ if st.button("Generate Leads"):
         "min_rating": min_rating,
         "min_reviews": min_reviews
     }
-    with st.spinner("Generating Leads...", show_time=True):
+    with st.spinner("Generating leads...hang tight", show_time=True):
         # Local Development Only
         # response = requests.get(
         #   "http://127.0.0.1:8000/leads",

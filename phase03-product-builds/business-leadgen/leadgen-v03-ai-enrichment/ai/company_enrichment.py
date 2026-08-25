@@ -47,10 +47,3 @@ def summarize_company(website_text):
 
     )
     return response.output_parsed
-
-website_text = extract_website_text("https://www.gametz.com")
-
-summary = summarize_company(website_text)
-
-print(summary.qualification)
-print(summary.qualification_reason)

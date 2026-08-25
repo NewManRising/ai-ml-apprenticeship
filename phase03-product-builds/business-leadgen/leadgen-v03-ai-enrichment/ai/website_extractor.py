@@ -40,5 +40,3 @@ def extract_website_text(url):
 
     return text
     
-
-
