@@ -9,8 +9,11 @@ load_dotenv()
 
 API_BASE_URL = os.getenv("API_BASE_URL")
 
-
 st.set_page_config(page_title="LeadGen v03")
+
+# Initialize session state once
+if "leads" not in st.session_state:
+    st.session_state["leads"] = None
 
 st.title("Intelligent Sales Lead Generator")
 
@@ -23,6 +26,7 @@ with col1:
         "Location",
         placeholder="Los Angeles, CA"
     )
+
     min_rating = st.slider(
         "Minimum Rating",
         min_value=1.0,
@@ -44,6 +48,9 @@ with col2:
         value=50
     )
 
+
+# Generate Leads
+
 if st.button("Generate Leads"):
 
     params = {
@@ -52,61 +59,113 @@ if st.button("Generate Leads"):
         "min_rating": min_rating,
         "min_reviews": min_reviews
     }
-    with st.spinner("Generating leads...hang tight", show_time=True):
-        # Local Development Only
-        # response = requests.get(
-        #   "http://127.0.0.1:8000/leads",
-        #   params=params
-        # )
 
-         response = requests.get(
-           f"{API_BASE_URL}/leads",
+    with st.spinner("Generating leads...hang tight", show_time=True):
+
+        response = requests.get(
+            f"{API_BASE_URL}/leads",
             params=params,
             timeout=60
-            )
+        )
 
-         response.raise_for_status()
+        response.raise_for_status()
 
-         data = response.json()
+        data = response.json()
 
-         if len(data) == 0:
-            st.warning("No Leads found")
-         else:
-            df = pd.DataFrame(data)
-            st.success(f"{len(data)} Leads found!")
-
-            st.dataframe(df, width="stretch")
-
-         # Stores binary data in memory
-            excel_buffer = io.BytesIO()
+        # Save results so they survive Streamlit reruns
+        st.session_state["leads"] = data
 
 
-           # excel_response = requests.get(
-           #     f"{API_BASE_URL}/leads/excel",
-           #     params=params,
-           #     timeout=60
-           # )
+# Displaying Results
 
-            # Writes file to xlsx
-            df.to_excel(excel_buffer, index=False, engine="openpyxl")
-            excel_buffer.seek(0)
+if st.session_state["leads"] == []:
 
-            st.download_button(
-                label="Download Excel File",
-                data=excel_buffer.getvalue(),
-                file_name="leads.xlsx",
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                icon=":material/download:",
-                on_click="ignore"
-            )
+    st.warning("No Leads found")
 
-       # Local Development Only
-       #  with open("leads.xlsx", "rb") as file:
-       #     st.download_button(
-       #         label="Download Excel File",
-       #         data=file,
-       #         file_name="leads.xlsx",
-       #         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-       #         icon=":material/download:"
 
-       #     )
+elif st.session_state["leads"]:
+
+    data = st.session_state["leads"]
+
+    df = pd.DataFrame(data)
+
+    st.success(f"{len(data)} Leads found!")
+
+
+# Lead Table
+
+    display_columns = [
+        "Name",
+        "Rating",
+        "Reviews",
+        "Score",
+        "Qualification",
+        "Website"
+    ]
+
+    display_df = df[display_columns]
+
+    st.dataframe(
+        display_df,
+        width="stretch"
+    )
+
+
+   # AI Lead Details
+
+    selected_name = st.selectbox(
+        "Select a lead to view AI insights",
+        options=df["Name"].tolist(),
+        index=None,
+        placeholder="Choose a company..."
+    )
+
+    if selected_name:
+
+        selected_lead = df[
+            df["Name"] == selected_name
+        ].iloc[0]
+
+        st.subheader(selected_lead["Name"])
+
+        st.write("### Company Summary")
+        st.write(selected_lead["Company_Summary"])
+
+        st.write("### Products / Services")
+        products_services = selected_lead["Products_Services"]
+
+        if products_services:
+            for item in products_services:
+                st.write(f"- {item}")
+        else:
+            st.write("No AI enrichment available.")
+
+        st.write("### Sales Insight")
+        st.write(selected_lead["Sales_Insight"])
+
+        st.write("### Qualification Reason")
+        st.write(selected_lead["Qualification_Reason"])
+
+
+# Excel Download
+
+    # Stores binary Excel data in memory
+    excel_buffer = io.BytesIO()
+
+    # Writes the full dataframe to the in-memory Excel file
+    df.to_excel(
+        excel_buffer,
+        index=False,
+        engine="openpyxl"
+    )
+
+    excel_buffer.seek(0)
+
+    st.download_button(
+        label="Download Excel File",
+        data=excel_buffer.getvalue(),
+        file_name="leads.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        icon=":material/download:",
+        on_click="ignore"
+    )
