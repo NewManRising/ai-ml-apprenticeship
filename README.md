@@ -115,6 +115,7 @@ This repository will continue evolving toward:
    https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
 2) Enum - Support for enumerations (Python official docs) - https://docs.python.org/3/library/enum.html
 3) Buffered Streams - BytesIO (Python Official docs) - https://docs.python.org/3/library/io.html#io.BytesIO
+4) Load_dotenv - https://pypi.org/project/python-dotenv/
 
 ### Data Processing
 1) Pandas Official Docs - 
