@@ -4,9 +4,12 @@ from dotenv import load_dotenv
 from schemas import CompanyEnrichment
 from ai.website_extractor import extract_website_text
 
-load_dotenv(override=True)
+load_dotenv()
 
 my_key = os.getenv("OPENAI_KEY")
+if not my_key:
+    raise RuntimeError("Please set OPENAI_KEY environment variable")
+
 client = OpenAI(api_key=my_key)
 
 

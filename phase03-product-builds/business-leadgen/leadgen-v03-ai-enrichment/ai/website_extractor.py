@@ -12,8 +12,7 @@ def extract_website_text(url):
         response.raise_for_status()
 
 
-    except requests.RequestException as e:
-        print(f"Website extraction failed for {url}: {e}")
+    except requests.RequestException:
 
         return None
 
@@ -30,13 +29,12 @@ def extract_website_text(url):
 
     # Prevents the LLM from extracting empty or useless text
     if len(text) < 100:
-        print(f"Not enough usable text from {url}")
+
         return None
 
     # Limit text to 5000 characters before sending it to an LLM
     text = text[:5000]
 
-    print(f"Extracted {len(text)} characters from {url}")
 
     return text
     

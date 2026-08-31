@@ -7,6 +7,8 @@ from ai.website_extractor import extract_website_text
 load_dotenv()
 
 PLACES_KEY = os.getenv("GOOGLE_PLACES_API_KEY")
+if not PLACES_KEY:
+    raise RuntimeError("Please set GOOGLE_PLACES_API_KEY environment variable")
 
 def search_google_places(location, keyword, min_rating, min_reviews):
     url = "https://places.googleapis.com/v1/places:searchText"
@@ -23,14 +25,19 @@ def search_google_places(location, keyword, min_rating, min_reviews):
     "textQuery": f"{keyword} in {location}",
     "pageSize": 5,
     "minRating": min_rating,
-    "openNow": True,
     "languageCode": "en-US",
 
 }
+    try:
+        response = requests.post(url, headers=headers, json=params)
+        response.raise_for_status()
 
-    response = requests.post(url, headers=headers, json=params)
-    response.raise_for_status()
-    data = response.json()
+        data = response.json()
+
+    except requests.RequestException as e:
+        raise RuntimeError(f"Google Places request failed: {e}")
+
+
 
     def cleaned_json(results):
 
