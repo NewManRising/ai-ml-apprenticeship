@@ -17,7 +17,7 @@ if "leads" not in st.session_state:
 
 st.title("Intelligent Sales Lead Generator")
 
-st.write("Get business leads powered by AI with a click of a button.")
+st.write("Get AI-Powered Business Leads With A Click Of A Button.")
 
 col1, col2 = st.columns(2, border=True)
 
@@ -61,19 +61,20 @@ if st.button("Generate Leads"):
     }
 
     with st.spinner("Generating leads...hang tight", show_time=True):
-
-        response = requests.get(
-            f"{API_BASE_URL}/leads",
-            params=params,
-            timeout=60
-        )
-
-        response.raise_for_status()
-
-        data = response.json()
+        try:
+            response = requests.get(
+                f"{API_BASE_URL}/leads",
+                params=params,
+                timeout=60
+            )
+            response.raise_for_status()
+            data = response.json()
 
         # Save results so they survive Streamlit reruns
-        st.session_state["leads"] = data
+            st.session_state["leads"] = data
+
+        except requests.RequestException as e:
+            st.error(f"Network Error. Try again later. {e}")
 
 
 # Displaying Results
