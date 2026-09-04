@@ -130,7 +130,13 @@ elif st.session_state["leads"]:
         st.subheader(selected_lead["Name"])
 
         st.write("### Company Summary")
-        st.write(selected_lead["Company_Summary"])
+        company_summary = selected_lead["Company_Summary"]
+
+        if pd.isna(company_summary):
+            st.write("No AI enrichment available.")
+        else:
+            st.write(company_summary)
+
 
         st.write("### Products / Services")
         products_services = selected_lead["Products_Services"]
@@ -142,10 +148,21 @@ elif st.session_state["leads"]:
             st.write("No AI enrichment available.")
 
         st.write("### Sales Insight")
-        st.write(selected_lead["Sales_Insight"])
+        sales_insight = selected_lead["Sales_Insight"]
+
+        if pd.isna(sales_insight):
+            st.write("No AI enrichment available.")
+        else:
+            st.write(sales_insight)
+
 
         st.write("### Qualification Reason")
-        st.write(selected_lead["Qualification_Reason"])
+        qualification_reason = selected_lead["Qualification_Reason"]
+
+        if pd.isna(qualification_reason):
+            st.write("No AI enrichment available.")
+        else:
+            st.write(qualification_reason)
 
 
 # Excel Download
