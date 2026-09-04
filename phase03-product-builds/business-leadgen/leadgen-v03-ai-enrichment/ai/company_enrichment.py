@@ -2,7 +2,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 from schemas import CompanyEnrichment
-from ai.website_extractor import extract_website_text
+
 
 load_dotenv()
 
