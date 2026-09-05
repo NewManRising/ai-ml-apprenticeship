@@ -48,6 +48,13 @@ with col2:
         value=50
     )
 
+# Demo Mode
+demo_mode = st.sidebar.toggle("Demo Mode", value=True)
+if demo_mode:
+    st.info("Running in Demo Mode with sample data")
+
+
+
 
 # Generate Leads
 
@@ -57,7 +64,8 @@ if st.button("Generate Leads"):
         "location": location,
         "keyword": keyword,
         "min_rating": min_rating,
-        "min_reviews": min_reviews
+        "min_reviews": min_reviews,
+        "demo": demo_mode
     }
 
     with st.spinner("Generating leads...hang tight", show_time=True):
