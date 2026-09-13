@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+ALLOW_LIVE_MODE = os.getenv("ALLOW_LIVE_MODE", "false").lower() == "true"
 API_BASE_URL = os.getenv("API_BASE_URL")
 
 st.set_page_config(page_title="LeadGen v03")
@@ -49,9 +50,16 @@ with col2:
     )
 
 # Demo Mode
-demo_mode = st.sidebar.toggle("Demo Mode", value=True)
-if demo_mode:
-    st.info("Running in Demo Mode with sample data")
+if not ALLOW_LIVE_MODE:
+    demo_mode = st.sidebar.toggle("Demo Mode", value=True, disabled=True)
+    st.sidebar.caption("Live mode is disabled on this deployment to prevent unrestricted API usage.")
+    if demo_mode:
+        st.info("Running in Demo Mode with sample data")
+
+else:
+    demo_mode = st.sidebar.toggle("Demo Mode", value=True)
+    if demo_mode:
+        st.info("Running in Demo Mode with sample data")
 
 
 
