@@ -15,9 +15,12 @@ Manually researching business leads is slow and inconsistent. This tool automate
 - **Graceful degradation** — if a website blocks scraping (403) or AI enrichment fails for any reason, the lead still returns with null AI fields instead of failing the whole request. The UI shows a clear "No AI enrichment available" message rather than "None"
 - **Demo mode** — a toggle that returns hardcoded sample leads instead of hitting real Google Places / OpenAI APIs, so the app can be explored without cost or requiring API keys
 
+
 ## Results
 
 Enrichment currently succeeds on the majority of leads with a live, non-blocking website. Known limitation: sites that return 403 to non-browser requests, or render content primarily via JavaScript, will not yield extractable text.
+
+**Deployment note:** this app is hosted on Render's free tier, which spins down after periods of inactivity. The first request after idle time may take 30–60 seconds to respond, or occasionally return a temporary error. Retrying resolves it and subsequent requests are fast.
 
 ## Tools & Libraries
 
@@ -50,9 +53,9 @@ API docs available at `http://127.0.0.1:8000/docs`
 streamlit run streamlit_app.py
 ```
 
-**Live demo:** _(coming soon — deployed on Render)_
+**Live demo:** https://ai-sales-lead-gen.onrender.com/
 
-Or use the built-in "Demo Mode" toggle to explore the app immediately with sample data, no API keys required.
+Live mode (real Google Places/OpenAI calls) is disabled in this deployment to prevent unrestricted API usage. Demo mode runs locally with your own API keys if you want to test the full pipeline.
 
 ## Future Improvements
 
