@@ -9,7 +9,7 @@ ALLOW_LIVE_MODE = os.getenv("ALLOW_LIVE_MODE", "false").lower() == "true"
 
 @app.get("/")
 def home():
-    return {"message": "AI Led Gen app is working!"}
+    return {"message": "AI Lead Gen app is working!"}
 
 
 @app.get("/leads")
