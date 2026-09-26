@@ -1,0 +1,1 @@
+Chess is played on an 8x8 board with 64 squares. Each player begins with 16 pieces: one king, one queen, two rooks, two bishops, two knights, and eight pawns. The game's objective is checkmate — trapping the opponent's king so it cannot escape capture. The current World Chess Champion title has been held by various players over the decades, with ratings tracked by FIDE.
